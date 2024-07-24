@@ -1,17 +1,15 @@
 :root {
-    --background-color: #FFC700;
-    --bs-primary-rgb: #12296C;
+  --background-color: #ffc700;
+  --bs-primary-rgb: #12296c;
 }
 
-
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--background-color);
-    color: var(--bs-primary-rgb);
-    font-weight: 300;
-    font-size: 1.2rem;
-    background-image: url(../images/noise-bg.png);
-
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-color);
+  color: var(--bs-primary-rgb);
+  font-weight: 300;
+  font-size: 1.2rem;
+  background-image: url(../images/noise-bg.png);
 }
 
 h1,
@@ -20,67 +18,68 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Unbounded', cursive;
-    font-weight: 800;
-
+  font-family: "Unbounded", cursive;
+  font-weight: 800;
 }
 
 .container-fluid-custom {
-    max-width: 1600px;
+  max-width: 1600px;
+  padding-left: 10rem;
+  padding-right: 10rem;
 }
 
 .btn {
-    padding-left: 1.6rem;
-    padding-right: 1.6rem;
-    border-radius: 2rem;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  border-radius: 2rem;
 }
 
 .btn-primary {
-    --bs-btn-color: #fff;
-    --bs-btn-bg: var(--bs-primary-rgb);
-    --bs-btn-border-color: var(--bs-primary-rgb);
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #0043a8;
-    --bs-btn-hover-border-color: #0043a8;
-    --bs-btn-focus-shadow-rgb: 49, 132, 253;
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: var(--bs-primary-rgb);
-    --bs-btn-active-border-color: var(--bs-primary-rgb);
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: var(--bs-primary-rgb);
-    --bs-btn-disabled-border-color: var(--bs-primary-rgb);
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--bs-primary-rgb);
+  --bs-btn-border-color: var(--bs-primary-rgb);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #0043a8;
+  --bs-btn-hover-border-color: #0043a8;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--bs-primary-rgb);
+  --bs-btn-active-border-color: var(--bs-primary-rgb);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: var(--bs-primary-rgb);
+  --bs-btn-disabled-border-color: var(--bs-primary-rgb);
 }
 
 .btn-outline-primary {
-    --bs-btn-color: var(--bs-primary-rgb);
-    --bs-btn-border-color: var(--bs-primary-rgb);
-    --bs-btn-hover-color: #0043a8;
-    --bs-btn-hover-bg: #0d6efd;
-    --bs-btn-hover-border-color: #0043a8;
-    --bs-btn-focus-shadow-rgb: 13, 110, 253;
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: var(--bs-primary-rgb);
-    --bs-btn-active-border-color: var(--bs-primary-rgb);
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: var(--bs-primary-rgb);
-    --bs-btn-disabled-bg: transparent;
-    --bs-btn-disabled-border-color: var(--bs-primary-rgb);
-    --bs-gradient: none;
+  --bs-btn-color: var(--bs-primary-rgb);
+  --bs-btn-border-color: var(--bs-primary-rgb);
+  --bs-btn-hover-color: #0043a8;
+  --bs-btn-hover-bg: #0d6efd;
+  --bs-btn-hover-border-color: #0043a8;
+  --bs-btn-focus-shadow-rgb: 13, 110, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--bs-primary-rgb);
+  --bs-btn-active-border-color: var(--bs-primary-rgb);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: var(--bs-primary-rgb);
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: var(--bs-primary-rgb);
+  --bs-gradient: none;
 }
 
 .pagination {
-    --bs-pagination-color: var(--bs-primary-rgb);
-    --bs-pagination-active-bf: var(--bs-primary-rgb);
-    --bs-pagination-active-border-color: var(--bs-primary-rgb);
+  --bs-pagination-color: var(--bs-primary-rgb);
+  --bs-pagination-active-bf: var(--bs-primary-rgb);
+  --bs-pagination-active-border-color: var(--bs-primary-rgb);
 }
 
 .home {
-    background:
-        url(../images/human-1.svg) left bottom no-repeat,
-        url(../images/human-2.svg) right bottom no-repeat,
-        url(../images/noise-bg.png) left bottom repeat,
-        var(--background-color);
+  background:
+    url(../images/human-1.svg) left bottom no-repeat,
+    url(../images/human-2.svg) right bottom no-repeat,
+    url(../images/noise-bg.png) left bottom repeat,
+    var(--background-color);
 }
 
 /* @media (min-width: 1200px) {
@@ -96,129 +95,124 @@ h6 {
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
-    .home {
-        background:
-            url(../images/human-1.svg) left bottom no-repeat,
-            url(../images/human-2.svg) right bottom no-repeat,
-            url(../images/noise-bg.png) left bottom repeat,
-            var(--background-color);
-    }
+  .home {
+    background:
+      url(../images/human-1.svg) left bottom no-repeat,
+      url(../images/human-2.svg) right bottom no-repeat,
+      url(../images/noise-bg.png) left bottom repeat,
+      var(--background-color);
+  }
 
-    .container-fluid-custom {
-        padding: 0 15px;
-        /* Add some padding for smaller screens */
-    }
+  .container-fluid-custom {
+    padding: 0 15px;
+    /* Add some padding for smaller screens */
+  }
 
-    .btn {
-        padding-left: 1.2rem;
-        padding-right: 1.2rem;
-    }
+  .btn {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
 }
 
 @media (max-width: 992px) {
-    body {
-        font-size: 1rem;
-    }
+  body {
+    font-size: 1rem;
+  }
 
-    .btn {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
+  .btn {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-size: 1.2em;
-        /* Adjust heading sizes */
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1.2em;
+    /* Adjust heading sizes */
+  }
 
-    .home-title::before,
-    .home-title::after {
-        left: -25px;
-        right: -25px;
-    }
+  .home-title::before,
+  .home-title::after {
+    left: -25px;
+    right: -25px;
+  }
 
-    .container-fluid-custom {
-        padding: 0 10px;
-        /* Adjust padding for smaller screens */
-    }
+  .container-fluid-custom {
+    padding: 0 10px;
+    /* Adjust padding for smaller screens */
+  }
 }
 
 @media (max-width: 768px) {
-    .btn {
-        padding-left: 0.8rem;
-        padding-right: 0.8rem;
-    }
+  .btn {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
 
-    .col-sm-3 {
-        width: 100%;
-        /* Stack columns on small screens */
-    }
+  .col-sm-3 {
+    width: 100%;
+    /* Stack columns on small screens */
+  }
 
-    .container-fluid-custom {
-        padding: 0 5px;
-        /* Further adjust padding for small screens */
-    }
+  .container-fluid-custom {
+    padding: 0 5px;
+    /* Further adjust padding for small screens */
+  }
 
-    .home {
-        background:
-            url(../images/human-1.svg) left bottom 50% no-repeat,
-            url(../images/human-2.svg) right bottom 50% no-repeat,
-            url(../images/noise-bg.png) left bottom repeat,
-            var(--background-color);
-    }
+  .home {
+    background:
+      url(../images/human-1.svg) left bottom 50% no-repeat,
+      url(../images/human-2.svg) right bottom 50% no-repeat,
+      url(../images/noise-bg.png) left bottom repeat,
+      var(--background-color);
+  }
 
-    .row {
-        flex-direction: column;
-        /* Stack rows vertically */
-    }
+  .row {
+    flex-direction: column;
+    /* Stack rows vertically */
+  }
 
-    .home-title::before,
-    .home-title::after {
-        display: none;
-        /* Hide decorative elements on small screens */
-    }
+  .home-title::before,
+  .home-title::after {
+    display: none;
+    /* Hide decorative elements on small screens */
+  }
 }
 
 @media (max-width: 576px) {
-    body {
-        font-size: 0.9rem;
-    }
+  body {
+    font-size: 0.9rem;
+  }
 
-    .btn {
-        padding-left: 0.6rem;
-        padding-right: 0.6rem;
-    }
+  .btn {
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+  }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-size: 1em;
-        /* Further adjust heading sizes */
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1em;
+    /* Further adjust heading sizes */
+  }
 }
 
-
 .home-title::before {
-    content: url(../images/stars.svg);
-    position: absolute;
-    left: -50px;
-    top: -30px
+  content: url(../images/stars.svg);
+  position: absolute;
+  left: -50px;
+  top: -30px;
 }
 
 .home-title::after {
-    content: url(../images/stars.svg);
-    position: absolute;
-    right: -50px;
-    bottom: -30px
-}
-
-.row {
-    justify-content: center;
+  content: url(../images/stars.svg);
+  position: absolute;
+  right: -50px;
+  bottom: -30px;
 }

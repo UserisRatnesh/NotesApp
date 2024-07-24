@@ -6,6 +6,7 @@ import connectDB from './server/config/db.js';
 import session from 'express-session';
 import passport from 'passport';
 import MongoStore from 'connect-mongo';
+import methodOverride from "method-override";
 
 const app = express();
 const port = 3000;
@@ -20,11 +21,13 @@ app.use(session({
 }));
 
 app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.session("_method"));
 
 // Middlewares
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(methodOverride());
 
 // Connect to database
 connectDB();
