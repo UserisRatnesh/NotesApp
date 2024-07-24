@@ -1,5 +1,4 @@
 import Note from "../models/Notes.js";
-import Notes from "../models/Notes.js";
 import mongoose from "mongoose";
 
 export async function dashboard(req, res) {
@@ -85,4 +84,32 @@ export async function dashboardUpdateNote(req, res) {
   } catch (error) {
     console.log(error);
   }
+}
+
+
+/*
+DELETE
+To delete the specific note
+*/
+
+export async function dashboardDeleteNote(req, res) {
+  try {
+    await Note.findByIdAndDelete({ _id: req.params.id }).where({ user: req.user.id });
+    res.redirect("/dashboard");
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+/*
+POST
+Add notes
+*/
+export async function dashboardAddNote(req, res) {
+  res.render("dashboard/add",
+    {
+      layout: "../views/layouts/dashboard"
+    }
+  );
 }
