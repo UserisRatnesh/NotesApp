@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 export async function dashboard(req, res) {
   let perPage = 12;
-  let page = req.query.page || 1;
+  const page = parseInt(req.query.page, 10) || 1;
 
   const locals = {
     title: "Dashboard",
@@ -14,7 +14,7 @@ export async function dashboard(req, res) {
     const notes = await Note.aggregate([
       {
         $sort: {
-          createdAt: -1,
+          updatedAt: -1
         },
       },
       {
@@ -27,7 +27,7 @@ export async function dashboard(req, res) {
         },
       },
     ])
-      .skip(perPage * page - perPage)
+      .skip(perPage * (page - 1))
       .limit(perPage);
 
     const count = await Note.countDocuments({
@@ -78,6 +78,7 @@ export async function dashboardUpdateNote(req, res) {
       {
         title: req.body.title,
         body: req.body.body,
+        updatedAt: Date.now()
       },
     ).where({ user: req.user.id });
     res.redirect("/dashboard");
@@ -103,8 +104,8 @@ export async function dashboardDeleteNote(req, res) {
 
 
 /*
-POST
-Add notes
+GET
+Add note page render
 */
 export async function dashboardAddNote(req, res) {
   res.render("dashboard/add",
@@ -112,4 +113,61 @@ export async function dashboardAddNote(req, res) {
       layout: "../views/layouts/dashboard"
     }
   );
+}
+
+/*
+POST
+Add notes
+*/
+
+export async function dashboardAddNoteSubmit(req, res) {
+  try {
+    req.body.user = req.user.id;
+    await Note.create(req.body);
+    res.redirect("/dashboard");
+  } catch (error) {
+    console.log(error);
+  }
+}
+/*
+GET
+Search
+*/
+export async function dashboardSearch(req, res) {
+  try {
+    res.render("dashboard/search", {
+      searchResults: "",
+      layout: "../views/layouts/dashboard"
+    })
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
+
+/*
+POST
+Search
+*/
+
+export async function dashboardSearchSubmit(req, res) {
+  try {
+    let searchTerm = req.body.searchTerm;
+    const searchNoSpecialChars = searchTerm.replace(/[^a-zA-Z0-9 ]/g, "");
+
+    const searchResults = await Note.find({
+      $or: [
+        { title: { $regex: new RegExp(searchNoSpecialChars, 'i') } },
+
+        { body: { $regex: new RegExp(searchNoSpecialChars, 'i') } },
+      ]
+    }).where({ user: req.user.id });
+    res.render("dashboard/search", {
+      searchResults,
+      layout: "../views/layouts/dashboard"
+    })
+  }
+  catch (error) {
+    console.log(error);
+  }
 }
